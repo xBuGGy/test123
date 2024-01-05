@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="artykul">
+    <div id="liczba"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let artykul = document.getElementById('artykul');
+            let liczba = document.getElementById('liczba');
+
+            artykul.addEventListener('input', function(event) {
+                artykul.value = artykul.value + ' ';
+                let cyfra = parseInt(event.data);
+                if (!isNaN(cyfra)) {
+                    liczba.textContent += cyfra;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
